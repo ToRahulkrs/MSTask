@@ -7,6 +7,6 @@ namespace MSTestEmployeeProject.DataAccess
 {
     public interface IEmployeeRepository : IReopository<Employee>
     {
-        void UpdateEmployee(int Id, Employee employee);
+        void UpdateEmployee(Employee employee);
     }
 }

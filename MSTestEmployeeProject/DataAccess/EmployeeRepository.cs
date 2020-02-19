@@ -9,16 +9,10 @@ namespace MSTestEmployeeProject.DataAccess
     {
         public EmployeeRepository(EmployeeDBContext context) : base(context) { }
 
-        public void UpdateEmployee(int Id, Employee employee)
+        public void UpdateEmployee(Employee employee)
         {
-            Employee Emp = new Employee();
-            Emp.EmpName = employee.EmpName;
-            Emp.MobileNumber = employee.MobileNumber;
-            Emp.Email = employee.Email;
-            Emp.Role = employee.Role;
             employeeDBContext.Employees.Update(employee);
-            employeeDBContext.SaveChanges();
-            
+            employeeDBContext.SaveChanges();   
         }
         public EmployeeDBContext employeeDBContext { get { return Context as EmployeeDBContext; } } 
     }
