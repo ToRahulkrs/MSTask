@@ -27,5 +27,10 @@ namespace MSTestEmployeeProject.Services
                 _unitOfWork.Complete();
             }
         }
+
+        public Employee GetEmployeeById(int id)
+        {
+           return _unitOfWork.Employees.Get(id);
+        }
     }
 }

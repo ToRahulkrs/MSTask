@@ -28,10 +28,13 @@ namespace MSTestProject
                 Role="manager"
             };
             Data.InserEmployee(Emp);
-
-
         }
-
+        [TestMethod]
+        public void GetEmployeeByIdTest()
+        {
+            var data = Data.GetEmployeeById(1);
+            Assert.IsNotNull(data);
+        }
 
     }
 }
