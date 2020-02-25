@@ -15,8 +15,9 @@ namespace MSTestEmployeeProject.DataAccess
         }
         protected override void OnConfiguring(DbContextOptionsBuilder OptionsBuilder)
         {
-            string path = "D:\\Rahul_Project\\MSTestProject\\MSTestEmployeeProject\\bin\\Debug\\netstandard2.0";
-            if (!File.Exists(Path.Combine(path, "EmployeeDB.db")))
+            string path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.Parent.FullName;
+            //string path = "D:\\Rahul_Task\\MSTestProject\\MSTestEmployeeProject\\bin\\Debug\\netstandard2.0";
+            if(!File.Exists(Path.Combine(path, "EmployeeDB.db")))
             {
                 File.Create(Path.Combine(path, "EmployeeDB.db"));
             }
@@ -24,7 +25,7 @@ namespace MSTestEmployeeProject.DataAccess
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Make Blog.Url required
+            // Make Employee required
             modelBuilder.Entity<Employee>();
 
         }

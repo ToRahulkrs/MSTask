@@ -21,10 +21,10 @@ namespace MSTestProject
         {
             Employee Emp = new Employee
             {
-                EmpName="manish Kumar",
-                Email="manish.Kumar@gmail.com",
-                MobileNumber="9903567843",
-                Role="sr manager"
+                EmpName="Rahul Kumar",
+                Email="Rahul.Kumar@gmail.com",
+                MobileNumber="8803265987",
+                Role="Manager"
             };
             Data.InserEmployee(Emp);
             var data = Data.GetEmployeeById(Emp.EmpId);
@@ -44,9 +44,10 @@ namespace MSTestProject
             {
                 EmpName = "Manish Singh",
                 Email="manish.singh@gmail.com"
+                ,MobileNumber="7569845623"
             };
-            Data.UpdateEmployee(3, Emp);
-            var data = Data.GetEmployeeById(3);
+            Data.UpdateEmployee(1, Emp);
+            var data = Data.GetEmployeeById(1);
             Assert.AreEqual(Emp.EmpName, data.EmpName);
         }
 
